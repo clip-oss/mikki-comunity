@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const wins = [
   {
@@ -63,49 +64,72 @@ export default function Wins() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {wins.map((win, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`group bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden ${win.hoverBorder} transition`}
-            >
-              <div className="aspect-video relative overflow-hidden bg-zinc-800">
-                {win.image ? (
-                  <Image
-                    src={win.image}
-                    alt={win.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition duration-500"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-6xl">📉</span>
+            <Link key={index} href="/wins" className="group">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className={`bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden ${win.hoverBorder} transition h-full`}
+              >
+                <div className="aspect-video relative overflow-hidden bg-zinc-800">
+                  {win.image ? (
+                    <Image
+                      src={win.image}
+                      alt={win.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition duration-500"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-6xl">📉</span>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span
+                      className={`${win.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}
+                    >
+                      {win.badge}
+                    </span>
                   </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <span
-                    className={`${win.badgeColor} text-white text-xs font-bold px-2 py-1 rounded`}
-                  >
-                    {win.badge}
-                  </span>
                 </div>
-              </div>
-              <div className="p-6">
-                <p className={`text-4xl font-black ${win.amountColor} mb-1`}>
-                  {win.amount}
-                </p>
-                <h3 className="text-white font-bold text-xl mb-1">
-                  {win.title}
-                </h3>
-                <p className="text-zinc-500 text-sm mb-3">{win.location}</p>
-                <p className="text-zinc-400 text-sm">{win.description}</p>
-              </div>
-            </motion.div>
+                <div className="p-6">
+                  <p className={`text-4xl font-black ${win.amountColor} mb-1`}>
+                    {win.amount}
+                  </p>
+                  <h3 className="text-white font-bold text-xl mb-1">
+                    {win.title}
+                  </h3>
+                  <p className="text-zinc-500 text-sm mb-3">{win.location}</p>
+                  <p className="text-zinc-400 text-sm mb-4">{win.description}</p>
+                  <p className="text-fuchsia-500 text-sm font-medium group-hover:underline">
+                    Read Full Story →
+                  </p>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
+
+        {/* View All Link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="text-center mt-12"
+        >
+          <Link
+            href="/wins"
+            className="inline-flex items-center gap-2 text-fuchsia-500 hover:text-fuchsia-400 font-semibold transition"
+          >
+            View Complete Win/Loss Record
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
