@@ -33,6 +33,12 @@ export default function Navbar() {
             Wins
           </Link>
           <Link
+            href="/tools"
+            className="text-zinc-400 hover:text-white text-sm transition"
+          >
+            Tools
+          </Link>
+          <Link
             href="/#proof"
             className="text-zinc-400 hover:text-white text-sm transition"
           >
