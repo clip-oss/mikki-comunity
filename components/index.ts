@@ -1,0 +1,11 @@
+export { default as Navbar } from './Navbar';
+export { default as FloatingSocialProof } from './FloatingSocialProof';
+export { default as Hero } from './Hero';
+export { default as FeaturedIn } from './FeaturedIn';
+export { default as Stats } from './Stats';
+export { default as Story } from './Story';
+export { default as TrustProof } from './TrustProof';
+export { default as Testimonials } from './Testimonials';
+export { default as Wins } from './Wins';
+export { default as CTA } from './CTA';
+export { default as Footer } from './Footer';
