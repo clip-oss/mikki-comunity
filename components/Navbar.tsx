@@ -21,25 +21,25 @@ export default function Navbar() {
         {/* Nav Links */}
         <div className="hidden md:flex items-center gap-8">
           <Link
-            href="#story"
+            href="/story"
             className="text-zinc-400 hover:text-white text-sm transition"
           >
             Story
           </Link>
           <Link
-            href="#wins"
+            href="/wins"
             className="text-zinc-400 hover:text-white text-sm transition"
           >
             Wins
           </Link>
           <Link
-            href="#proof"
+            href="/#proof"
             className="text-zinc-400 hover:text-white text-sm transition"
           >
             Proof
           </Link>
           <Link
-            href="#community"
+            href="/community"
             className="text-zinc-400 hover:text-white text-sm transition"
           >
             Community
