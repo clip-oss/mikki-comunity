@@ -303,6 +303,16 @@ export default function WinsPage() {
 
                   {/* The Venetian Card */}
                   <div className="bg-zinc-900 border border-green-500/30 rounded-2xl overflow-hidden">
+                    {/* Card Image */}
+                    <div className="aspect-video relative overflow-hidden">
+                      <Image
+                        src="https://www.mikki-mase.com/images/mikki-main-1.webp"
+                        alt="Mikki Mase at The Venetian"
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                    </div>
                     <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                         <div>
@@ -362,7 +372,18 @@ export default function WinsPage() {
                   <div className="space-y-6">
 
                     {/* Wynn Las Vegas */}
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+                      {/* Card Image */}
+                      <div className="aspect-[21/9] relative overflow-hidden">
+                        <Image
+                          src="https://www.mikki-mase.com/images/mikki-main-3.webp"
+                          alt="Wynn Las Vegas"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                         <div>
                           <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">NET LOSS</span>
@@ -380,10 +401,22 @@ export default function WinsPage() {
                       <div className="mt-4 p-3 bg-zinc-800 rounded-lg">
                         <p className="text-zinc-400 text-sm"><strong className="text-white">Why This Adds Credibility:</strong> If the story was fake, he&apos;d only claim wins. Documenting losses shows honesty.</p>
                       </div>
+                      </div>
                     </div>
 
                     {/* Biggest Single Loss */}
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+                      {/* Card Image */}
+                      <div className="aspect-[21/9] relative overflow-hidden">
+                        <Image
+                          src="https://www.mikki-mase.com/images/mikki-main-4.webp"
+                          alt="Biggest Single Loss"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                         <div>
                           <span className="bg-zinc-700 text-white text-xs font-bold px-2 py-1 rounded">SELF-REPORTED</span>
@@ -397,10 +430,22 @@ export default function WinsPage() {
                         <p><strong className="text-white">What Happened:</strong> Mikki claims his biggest single loss was $8 million in one night. According to him, he figured out the casino was using manual card manipulation.</p>
                         <p><strong className="text-white">The Comeback:</strong> After reverse-engineering their cheating method, he claims he won back $9 million from the same casino, turning an $8M loss into a +$1M net profit.</p>
                       </div>
+                      </div>
                     </div>
 
                     {/* Hustler Casino Live */}
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8">
+                    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+                      {/* Card Image */}
+                      <div className="aspect-[21/9] relative overflow-hidden">
+                        <Image
+                          src="https://www.mikki-mase.com/images/mikki-main-5.webp"
+                          alt="Hustler Casino Live"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                         <div>
                           <span className="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">DOCUMENTED</span>
@@ -417,6 +462,7 @@ export default function WinsPage() {
 
                       <div className="mt-4 p-3 bg-zinc-800 rounded-lg">
                         <p className="text-zinc-400 text-sm"><strong className="text-white">Why This Matters:</strong> Shows his edge is specific to baccarat, not all casino games. Adds credibility.</p>
+                      </div>
                       </div>
                     </div>
 
@@ -446,7 +492,18 @@ export default function WinsPage() {
                   <div className="space-y-6">
 
                     {/* Total Career Winnings */}
-                    <div className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8">
+                    <div className="bg-zinc-900 border border-yellow-500/30 rounded-2xl overflow-hidden">
+                      {/* Card Image */}
+                      <div className="aspect-[21/9] relative overflow-hidden">
+                        <Image
+                          src="https://www.mikki-mase.com/images/mikki-main-2.webp"
+                          alt="Total Career Winnings"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                         <div>
                           <span className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">UNVERIFIED</span>
@@ -460,10 +517,22 @@ export default function WinsPage() {
                         <p><strong className="text-white">What&apos;s Verified:</strong> Only the $10M+ Venetian win is independently confirmed. The remaining ~$22M is self-reported without third-party verification.</p>
                         <p><strong className="text-white">Reality Check:</strong> Given his documented $10M win, business empire sale proceeds, and lifestyle, multi-million dollar total winnings are plausible but not independently verified.</p>
                       </div>
+                      </div>
                     </div>
 
                     {/* Biggest Single Session */}
-                    <div className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8">
+                    <div className="bg-zinc-900 border border-yellow-500/30 rounded-2xl overflow-hidden">
+                      {/* Card Image */}
+                      <div className="aspect-[21/9] relative overflow-hidden">
+                        <Image
+                          src="https://www.mikki-mase.com/images/mikki-main-6.webp"
+                          alt="Biggest Single Session Win"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                         <div>
                           <span className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">SELF-REPORTED</span>
@@ -476,10 +545,22 @@ export default function WinsPage() {
                         <p><strong className="text-white">The Claim:</strong> Mikki states his largest single session win was $11,526,000 over 7 days of play. He played $250,000 per hand in short bursts, hitting the table strategically rather than grinding for hours.</p>
                         <p><strong className="text-white">The Strategy:</strong> He didn&apos;t sit at tables for extended sessions. Instead, he&apos;d observe patterns, make a few massive bets ($250K/hand), extract millions, then disappear for weeks to avoid casino heat.</p>
                       </div>
+                      </div>
                     </div>
 
                     {/* Peak Earning Period */}
-                    <div className="bg-zinc-900 border border-yellow-500/30 rounded-2xl p-8">
+                    <div className="bg-zinc-900 border border-yellow-500/30 rounded-2xl overflow-hidden">
+                      {/* Card Image */}
+                      <div className="aspect-[21/9] relative overflow-hidden">
+                        <Image
+                          src="https://www.mikki-mase.com/images/mikki-main-7.webp"
+                          alt="Peak Earning Period"
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/50 to-transparent" />
+                      </div>
+                      <div className="p-8">
                       <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                         <div>
                           <span className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded">SELF-REPORTED</span>
@@ -491,6 +572,7 @@ export default function WinsPage() {
                       <div className="space-y-3 text-zinc-400">
                         <p><strong className="text-white">Year 3 Performance:</strong> Mikki claims that during his third year of professional baccarat play, he averaged $1 million per week in wins.</p>
                         <p><strong className="text-white">First Million Win:</strong> His first seven-figure session came about 18 months into his gambling career, winning between $1.125M and $1.25M in a single session.</p>
+                      </div>
                       </div>
                     </div>
 

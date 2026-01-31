@@ -36,7 +36,7 @@ const wins = [
     location: 'Las Vegas, NV • 2022',
     description:
       'Documented loss. Mikki shares both wins AND losses publicly.',
-    image: null,
+    image: 'https://www.mikki-mase.com/images/mikki-main-3.webp',
     badge: 'LOSS',
     badgeColor: 'bg-red-500',
     hoverBorder: 'hover:border-red-500/50',
