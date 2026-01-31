@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import JoinButton from './JoinButton';
 
 export default function Footer() {
   return (
@@ -43,25 +44,15 @@ export default function Footer() {
             >
               Proof
             </Link>
-            <a
-              href="https://t.me/+9R9kDE-c2UVhMTc0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-white text-sm transition"
-            >
+            <JoinButton className="text-zinc-500 hover:text-white text-sm transition">
               Telegram
-            </a>
+            </JoinButton>
           </div>
 
           {/* CTA */}
-          <a
-            href="https://t.me/+9R9kDE-c2UVhMTc0"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition"
-          >
+          <JoinButton className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition">
             Join Free
-          </a>
+          </JoinButton>
         </div>
 
         <div className="border-t border-zinc-900 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">

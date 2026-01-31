@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import JoinButton from './JoinButton';
 
 export default function FloatingSocialProof() {
   return (
@@ -15,14 +16,9 @@ export default function FloatingSocialProof() {
         <span className="text-fuchsia-300 hidden sm:inline">147 people joined this week</span>
         <span className="text-fuchsia-300 sm:hidden">147 joined</span>
         <span className="text-zinc-600 hidden sm:inline">|</span>
-        <a
-          href="https://t.me/+9R9kDE-c2UVhMTc0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white font-medium hover:underline whitespace-nowrap"
-        >
+        <JoinButton className="text-white font-medium hover:underline whitespace-nowrap">
           Join Free →
-        </a>
+        </JoinButton>
       </div>
     </motion.div>
   );

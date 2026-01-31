@@ -9,3 +9,5 @@ export { default as Testimonials } from './Testimonials';
 export { default as Wins } from './Wins';
 export { default as CTA } from './CTA';
 export { default as Footer } from './Footer';
+export { default as JoinButton } from './JoinButton';
+export { default as LeadCaptureModal } from './LeadCaptureModal';
