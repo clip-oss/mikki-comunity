@@ -331,7 +331,7 @@ export default function FAQPage() {
             Join Mikki&apos;s free Telegram community and get direct answers. Over 200,000 members asking questions and learning every day.
           </p>
           <a
-            href="https://t.me/mikkimase"
+            href="https://t.me/+9R9kDE-c2UVhMTc0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold px-8 py-4 rounded-full transition text-lg"

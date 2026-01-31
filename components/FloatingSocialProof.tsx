@@ -15,7 +15,7 @@ export default function FloatingSocialProof() {
         <span className="text-fuchsia-300">147 people joined this week</span>
         <span className="text-zinc-600">|</span>
         <a
-          href="https://t.me/mikkimase"
+          href="https://t.me/+9R9kDE-c2UVhMTc0"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white font-medium hover:underline"

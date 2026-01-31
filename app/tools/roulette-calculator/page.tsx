@@ -635,7 +635,7 @@ export default function RouletteCalculator() {
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-zinc-400 mb-4">Get the full roulette cheatsheet and more in Mikki&apos;s free community</p>
           <a
-            href="https://t.me/mikkimase"
+            href="https://t.me/+9R9kDE-c2UVhMTc0"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold px-6 py-3 rounded-full transition"

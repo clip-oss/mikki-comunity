@@ -208,7 +208,7 @@ export default function ToolsPage() {
               Join the free Telegram community for exclusive strategies and real-time updates.
             </p>
             <a
-              href="https://t.me/mikkimase"
+              href="https://t.me/+9R9kDE-c2UVhMTc0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold px-8 py-4 rounded-full text-lg transition transform hover:scale-105"

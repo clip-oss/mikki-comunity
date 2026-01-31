@@ -85,7 +85,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          href="https://t.me/mikkimase"
+          href="https://t.me/+9R9kDE-c2UVhMTc0"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold px-10 py-5 rounded-full text-xl transition transform hover:scale-105 shadow-lg shadow-fuchsia-500/25"

@@ -107,7 +107,7 @@ export default function Navbar() {
 
         {/* CTA */}
         <a
-          href="https://t.me/mikkimase"
+          href="https://t.me/+9R9kDE-c2UVhMTc0"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-fuchsia-500 hover:bg-fuchsia-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition"

@@ -113,7 +113,7 @@ export default function CommunityPage() {
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             <a
-              href="https://t.me/mikkimase"
+              href="https://t.me/+9R9kDE-c2UVhMTc0"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 w-full bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-bold px-8 py-5 rounded-xl text-xl transition shadow-lg shadow-fuchsia-500/25 transform hover:scale-[1.02]"
