@@ -3,10 +3,17 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close menu on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -21,6 +28,7 @@ export default function Navbar() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
+    { href: '/', label: 'Home', icon: '🏠' },
     { href: '/story', label: 'Story', icon: '📖' },
     { href: '/wins', label: 'Wins', icon: '💰' },
     { href: '/the-system', label: 'The System', icon: '🎯' },
@@ -32,15 +40,16 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Main Navbar - positioned below the floating banner */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-xl border-b border-white/5"
+        className="fixed top-9 w-full z-50 bg-black/95 backdrop-blur-xl border-b border-zinc-800"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold tracking-tight">
+          <Link href="/" className="text-xl font-bold tracking-tight z-10">
             <span className="text-white">MIKKI</span>
             <span className="text-fuchsia-500">MASE</span>
           </Link>
@@ -141,10 +150,14 @@ export default function Navbar() {
               Join Free
             </a>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - ALWAYS visible on mobile with background */}
             <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-2 text-white hover:bg-zinc-800 rounded-lg transition"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setMobileMenuOpen(true);
+              }}
+              className="lg:hidden relative z-[60] flex items-center justify-center w-10 h-10 bg-zinc-800 hover:bg-zinc-700 text-white rounded-lg transition"
               aria-label="Open menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,17 +168,17 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Very high z-index */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <div className="fixed inset-0 z-[60] lg:hidden">
+          <div className="fixed inset-0 z-[200] lg:hidden">
             {/* Dark Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
             />
 
@@ -176,6 +189,7 @@ export default function Navbar() {
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
               className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-zinc-900 shadow-2xl flex flex-col"
+              onClick={(e) => e.stopPropagation()}
             >
               {/* Menu Header */}
               <div className="flex items-center justify-between p-4 border-b border-zinc-800">
@@ -198,7 +212,11 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 text-zinc-300 hover:text-white hover:bg-zinc-800 rounded-xl transition"
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${
+                      pathname === link.href
+                        ? 'bg-fuchsia-500/20 text-fuchsia-400'
+                        : 'text-zinc-300 hover:text-white hover:bg-zinc-800'
+                    }`}
                   >
                     <span className="text-xl">{link.icon}</span>
                     <span className="font-medium">{link.label}</span>
