@@ -1,9 +1,12 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
 export default function Navbar() {
+  const [moreOpen, setMoreOpen] = useState(false);
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -33,23 +36,73 @@ export default function Navbar() {
             Wins
           </Link>
           <Link
+            href="/the-system"
+            className="text-zinc-400 hover:text-white text-sm transition"
+          >
+            System
+          </Link>
+          <Link
             href="/tools"
             className="text-zinc-400 hover:text-white text-sm transition"
           >
             Tools
           </Link>
-          <Link
-            href="/#proof"
-            className="text-zinc-400 hover:text-white text-sm transition"
-          >
-            Proof
-          </Link>
-          <Link
-            href="/community"
-            className="text-zinc-400 hover:text-white text-sm transition"
-          >
-            Community
-          </Link>
+
+          {/* More Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              onBlur={() => setTimeout(() => setMoreOpen(false), 150)}
+              className="text-zinc-400 hover:text-white text-sm transition flex items-center gap-1"
+            >
+              More
+              <svg
+                className={`w-4 h-4 transition-transform ${moreOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <AnimatePresence>
+              {moreOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute top-full left-0 mt-2 w-48 bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden shadow-xl"
+                >
+                  <Link
+                    href="/timeline"
+                    className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition"
+                  >
+                    Timeline
+                  </Link>
+                  <Link
+                    href="/faq"
+                    className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition"
+                  >
+                    FAQ
+                  </Link>
+                  <Link
+                    href="/community"
+                    className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition"
+                  >
+                    Community
+                  </Link>
+                  <Link
+                    href="/#proof"
+                    className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition"
+                  >
+                    Proof
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </div>
 
         {/* CTA */}
