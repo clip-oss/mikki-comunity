@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mikki-mase.com'),
   title: 'Mikki Mase | $32M Baccarat Winner - Join Free Telegram',
   description: 'From federal prison to winning $32M in baccarat. Banned from 150+ casinos. Join the free Telegram community for strategies, cheatsheets, and real-time updates.',
   keywords: 'Mikki Mase, baccarat, gambling, casino, Telegram, strategies',
