@@ -12,7 +12,7 @@ const wins = [
     location: 'Las Vegas, NV • 2021-2022',
     description:
       'Documented with witness verification from professional poker player Jake Ormand.',
-    image: 'https://www.mikki-mase.com/images/mikki-main-1.webp',
+    image: '/images/mikki-main-1.webp',
     badge: 'VERIFIED',
     badgeColor: 'bg-green-500',
     hoverBorder: 'hover:border-green-500/50',
@@ -24,7 +24,7 @@ const wins = [
     location: 'Las Vegas, NV • 2020-2023',
     description:
       'Combined verified winnings across multiple casino properties.',
-    image: 'https://www.mikki-mase.com/images/mikki-main-2.webp',
+    image: '/images/mikki-main-2.webp',
     badge: 'VERIFIED',
     badgeColor: 'bg-green-500',
     hoverBorder: 'hover:border-green-500/50',
@@ -36,7 +36,7 @@ const wins = [
     location: 'Las Vegas, NV • 2022',
     description:
       'Documented loss. Mikki shares both wins AND losses publicly.',
-    image: 'https://www.mikki-mase.com/images/mikki-main-3.webp',
+    image: '/images/mikki-extra.webp',
     badge: 'LOSS',
     badgeColor: 'bg-red-500',
     hoverBorder: 'hover:border-red-500/50',

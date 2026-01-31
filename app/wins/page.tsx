@@ -176,7 +176,7 @@ export default function WinsPage() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://www.mikki-mase.com/images/mikki-main-2.webp"
+            src="/images/mikki-main-2.webp"
             alt="Mikki Mase"
             fill
             className="object-cover"
@@ -306,7 +306,7 @@ export default function WinsPage() {
                     {/* Card Image */}
                     <div className="aspect-video relative overflow-hidden">
                       <Image
-                        src="https://www.mikki-mase.com/images/mikki-main-1.webp"
+                        src="/images/mikki-main-1.webp"
                         alt="Mikki Mase at The Venetian"
                         fill
                         className="object-cover"
@@ -376,7 +376,7 @@ export default function WinsPage() {
                       {/* Card Image */}
                       <div className="aspect-[21/9] relative overflow-hidden">
                         <Image
-                          src="https://www.mikki-mase.com/images/mikki-main-3.webp"
+                          src="/images/mikki-extra.webp"
                           alt="Wynn Las Vegas"
                           fill
                           className="object-cover"
@@ -409,7 +409,7 @@ export default function WinsPage() {
                       {/* Card Image */}
                       <div className="aspect-[21/9] relative overflow-hidden">
                         <Image
-                          src="https://www.mikki-mase.com/images/mikki-main-4.webp"
+                          src="/images/mikki-main-2.webp"
                           alt="Biggest Single Loss"
                           fill
                           className="object-cover"
@@ -438,7 +438,7 @@ export default function WinsPage() {
                       {/* Card Image */}
                       <div className="aspect-[21/9] relative overflow-hidden">
                         <Image
-                          src="https://www.mikki-mase.com/images/mikki-main-5.webp"
+                          src="/images/mikki-main-1.webp"
                           alt="Hustler Casino Live"
                           fill
                           className="object-cover"
@@ -496,7 +496,7 @@ export default function WinsPage() {
                       {/* Card Image */}
                       <div className="aspect-[21/9] relative overflow-hidden">
                         <Image
-                          src="https://www.mikki-mase.com/images/mikki-main-2.webp"
+                          src="/images/mikki-main-2.webp"
                           alt="Total Career Winnings"
                           fill
                           className="object-cover"
@@ -525,7 +525,7 @@ export default function WinsPage() {
                       {/* Card Image */}
                       <div className="aspect-[21/9] relative overflow-hidden">
                         <Image
-                          src="https://www.mikki-mase.com/images/mikki-main-6.webp"
+                          src="/images/mikki-main-2.webp"
                           alt="Biggest Single Session Win"
                           fill
                           className="object-cover"
@@ -553,7 +553,7 @@ export default function WinsPage() {
                       {/* Card Image */}
                       <div className="aspect-[21/9] relative overflow-hidden">
                         <Image
-                          src="https://www.mikki-mase.com/images/mikki-main-7.webp"
+                          src="/images/mikki-extra.webp"
                           alt="Peak Earning Period"
                           fill
                           className="object-cover"
