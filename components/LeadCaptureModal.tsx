@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 interface LeadCaptureModalProps {
   isOpen: boolean
@@ -13,8 +14,14 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   const TELEGRAM_LINK = 'https://t.me/+9R9kDE-c2UVhMTc0'
+
+  // Ensure we're mounted on client before using portal
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Close on Escape key & prevent body scroll
   useEffect(() => {
@@ -33,7 +40,7 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
+  if (!isOpen || !mounted) return null
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -86,7 +93,8 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
     onClose()
   }
 
-  return (
+  // Use portal to render at document.body, avoiding CSS transform issues
+  return createPortal(
     <>
       {/* BACKDROP - Full screen, click to close */}
       <div
@@ -211,6 +219,7 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
           </div>
         </div>
       </div>
-    </>
+    </>,
+    document.body
   )
 }
