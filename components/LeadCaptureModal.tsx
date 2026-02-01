@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 interface LeadCaptureModalProps {
@@ -16,6 +16,35 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
   const [success, setSuccess] = useState(false)
 
   const TELEGRAM_LINK = 'https://t.me/+9R9kDE-c2UVhMTc0'
+
+  const handleClose = useCallback(() => {
+    if (!isLoading) {
+      setName('')
+      setEmail('')
+      setError('')
+      setSuccess(false)
+      onClose()
+    }
+  }, [isLoading, onClose])
+
+  // Escape key handler
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        handleClose()
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen, handleClose])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -49,10 +78,7 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
 
       setTimeout(() => {
         window.open(TELEGRAM_LINK, '_blank')
-        onClose()
-        setName('')
-        setEmail('')
-        setSuccess(false)
+        handleClose()
       }, 1500)
 
     } catch {
@@ -62,13 +88,9 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
     }
   }
 
-  const handleClose = () => {
-    if (!isLoading) {
-      onClose()
-      setName('')
-      setEmail('')
-      setError('')
-      setSuccess(false)
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      handleClose()
     }
   }
 
@@ -79,33 +101,47 @@ export default function LeadCaptureModal({ isOpen, onClose }: LeadCaptureModalPr
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-          onClick={(e) => e.target === e.currentTarget && handleClose()}
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+          onClick={handleBackdropClick}
         >
+          {/* Close Button - Outside modal for visibility */}
+          <button
+            onClick={handleClose}
+            disabled={isLoading}
+            className="absolute top-4 right-4 z-[10000] p-3 bg-black/50 hover:bg-black/70 text-white rounded-full transition disabled:opacity-50"
+            aria-label="Close modal"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ type: 'spring', duration: 0.3 }}
             className="relative w-full max-w-md bg-zinc-900 rounded-2xl border border-zinc-800 shadow-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-fuchsia-600 to-purple-600 p-6 text-center">
+            <div className="bg-gradient-to-r from-fuchsia-600 to-purple-600 p-6 text-center relative">
               <div className="text-5xl mb-3">🎰</div>
               <h2 className="text-2xl font-black text-white">Join 7,400+ Members</h2>
               <p className="text-white/80 text-sm mt-1">Free strategies & cheatsheets</p>
-            </div>
 
-            {/* Close Button */}
-            <button
-              onClick={handleClose}
-              disabled={isLoading}
-              className="absolute top-4 right-4 p-2 text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition disabled:opacity-50"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+              {/* Inner Close Button */}
+              <button
+                onClick={handleClose}
+                disabled={isLoading}
+                className="absolute top-3 right-3 p-2 bg-black/30 hover:bg-black/50 text-white rounded-lg transition disabled:opacity-50"
+                aria-label="Close modal"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
 
             {/* Content */}
             <div className="p-6">
